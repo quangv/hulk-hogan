@@ -11,7 +11,6 @@ Feature 'Express Engine',
 			Given 'an Express server', ->
 				express = require 'express'
 				app = express.createServer()
-				app.set 'views', __dirname+'/views'
 				app.listen 3000
 
 			And "it's registered to use Hulk-Hogan", ->
@@ -21,7 +20,7 @@ Feature 'Express Engine',
 			file = null
 			fs = require 'fs'
 			And 'I have a template file', ->
-				file = 'views/express_engine.hulk'
+				file = 'express_engine.hulk'
 				fs.writeFileSync file, "Hello {{what}}!"
 
 			When 'I render that template', ->

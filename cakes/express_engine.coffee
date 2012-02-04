@@ -1,8 +1,8 @@
 Feature 'Express Engine',
 
 	"As a developer",
-	"I want to use Hulk-Hogan", ->
-	"In order to use Hogan.js with Express",
+	"I want to use Hulk-Hogan",
+	"In order to use Hogan.js with Express", ->
 
 		Scenario "Express 2.x", ->
 			Given 'express server', ->

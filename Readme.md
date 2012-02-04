@@ -7,3 +7,5 @@ Hi {{name}}
 
 {{> salute}}
 ```
+
+inspired by [HBS](https://github.com/donpark/hbs)

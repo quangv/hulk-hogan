@@ -11,6 +11,7 @@ Feature 'Express Engine',
 			Given 'an Express server', ->
 				express = require 'express'
 				app = express.createServer()
+				app.set 'views', process.cwd()
 				app.listen 3000
 
 			And "it's registered to use Hulk-Hogan", ->
@@ -21,7 +22,8 @@ Feature 'Express Engine',
 			fs = require 'fs'
 			And 'I have a template file', ->
 				file = 'express_engine.hulk'
-				fs.writeFileSync file, "Hello {{what}}!"
+				template = fs.readFileSync file
+				template.toString().should.eql 'Hello {{what}}!'
 
 			When 'I render that template', ->
 				app.get '/', (req,res)->
@@ -32,6 +34,3 @@ Feature 'Express Engine',
 				agent.get 'http://localhost:3000', (res)->
 					res.text.should.eql 'Hello World!'
 					done()
-
-			after ->
-				fs.unlinkSync file

@@ -13,5 +13,6 @@
 						 ,"express" : "*"
                     }
   , "keywords" : ["hogan.js", "express", "hogan", "partials", "template"]
+  , "main" : "./index.js"
 }
 

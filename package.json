@@ -3,12 +3,14 @@
   ,	"version" : "0.0.0"
   ,	"author" : "Quang Van <quangvvv@gmail.com>"
   ,	"homepage" : "https://github.com/quangv/hulk-hogan"
-  ,	"dependencies" : {	"hogan.js" : "*"
+  ,	"dependencies" : {  "hogan.js" : "*"
                        ,"coffee-script" : "*"
                     }
-  ,	"devDependencies" : {	"mocha" : "*"
+  ,	"devDependencies" : { "mocha" : "*"
                          ,"mocha-cakes" : "*"
                          ,"should" : "*"
+						 ,"superagent" : "*"
+						 ,"express" : "*"
                     }
   , "keywords" : ["hogan.js", "express", "hogan", "partials", "template"]
 }

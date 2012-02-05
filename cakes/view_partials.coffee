@@ -23,7 +23,7 @@ Feature 'View Partials',
 			And 'I have a partial template file', ->
 				file = 'salute.hulk'
 				template = fs.readFileSync file
-				template.toString().should.eql 'How are you, {{what}}?'
+				template.toString().replace('\n','').should.eql 'How are you, {{what}}?'
 				
 
 			And 'I have a template file that includes that partial', ->

@@ -40,3 +40,6 @@ Feature 'View Partials',
 				agent.get 'http://localhost:3000', (res)->
 					res.text.should.eql 'Hello World! How are you, World?'
 					done()
+
+			after ->
+				app.close()

@@ -34,3 +34,6 @@ Feature 'Express Engine',
 				agent.get 'http://localhost:3000', (res)->
 					res.text.should.eql 'Hello World!'
 					done()
+
+			after ->
+				app.close()

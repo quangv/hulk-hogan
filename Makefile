@@ -1,8 +1,8 @@
 food:	
-	@mocha -R spec -r should -r mocha-cakes cakes/*.coffee
+	@mocha -R spec -r should -r mocha-cakes --globals log cakes/*.coffee
 
 shake:
-	@mocha -R spec -r should -r mocha-cakes $$(find spec -name \*.coffee)
+	@mocha -R spec -r should -r mocha-cakes --globals log $$(find spec -name \*.coffee)
 
 buffet: shake food
 

@@ -15,6 +15,7 @@ Feature 'View Partials',
 				app.listen 3000
 
 			And "it's registered to use Hulk-Hogan", ->
+				app.set 'view engine', 'hulk'
 				app.set 'view options', layout:false
 				app.register '.hulk', require '../'
 
@@ -38,7 +39,7 @@ Feature 'View Partials',
 			Then 'it should output the rendered template with partial', (done)->
 				agent = require 'superagent'
 				agent.get 'http://localhost:3000', (res)->
-					res.text.should.eql 'Hello World! How are you, World?'
+					res.text.replace(/\n/g,'').should.eql 'Hello World! How are you, World?'
 					done()
 
 			after ->

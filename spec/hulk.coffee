@@ -21,5 +21,16 @@ Describe 'hulk.coffee', ->
 
 			after ->
 				fs.unlinkSync file
-				
-			
+
+		describe 'Default Extension Partials', ->
+			fs = require 'fs'
+			filename = 'test_partial'
+			file = filename+'.hulk'
+			before ->
+				fs.writeFileSync file, 'How are you, {{what}}?'
+
+			it 'should include and compile template with {{> filename}} tag without extension.', ->
+				hulk.compile("Hello {{what}}. {{> #{filename}}}", {what:'world', defaultEngine:'hulk'})().should.eql 'Hello world. How are you, world?'
+
+			after ->
+				fs.unlinkSync file

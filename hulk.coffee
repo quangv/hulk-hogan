@@ -15,7 +15,11 @@ exports.compile = (source='', options)->
 	if partial_files.length
 		fs = require 'fs'
 		for file in partial_files
-			partials[file] = fs.readFileSync(file).toString()  # TODO better way to read file, especially large ones.
+			try
+				partials[file] = fs.readFileSync(file).toString()  # TODO better way to read file, especially large ones.
+			catch e
+				if options.defaultEngine
+					partials[file] = fs.readFileSync(file+'.'+options.defaultEngine).toString()  # TODO better way to read file, especially large ones.
 
 	return ->
 		return compiled.render options, partials

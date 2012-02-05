@@ -26,14 +26,14 @@ Feature 'View Partials',
 				template.toString().replace('\n','').should.eql 'How are you, {{what}}?'
 				
 
+			file_template = 'view_partials.hulk'
 			And 'I have a template file that includes that partial', ->
-				file = 'view_partials.hulk'
-				template = fs.readFileSync file
+				template = fs.readFileSync file_template
 				template.toString().replace('\n','').should.eql 'Hello {{what}}! {{> salute}}'
 
 			When 'I render that template', ->
 				app.get '/', (req,res)->
-					res.render 'express_engine.hulk', {what : 'World'}
+					res.render file_template, {what : 'World'}
 
 			Then 'it should output the rendered template with partial', (done)->
 				agent = require 'superagent'

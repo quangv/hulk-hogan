@@ -16,7 +16,38 @@ Doens't have many bells and whistles. HTML Structure, and views are suppose to b
 
 [Mustache](http://mustache.github.com/) is awesome. Has many implementations. It's clear `what's a {{variable}} and what is not`.
 
-# Usage
+# Why Hulk Hogan?
+
+Becaues he's [awesome](http://en.wikipedia.org/wiki/Hulk_Hogan). But also because there wasn't a solution I could find that let's you easily use Mustaches' partials with Express.
+
+_body.hulk_
+
+```
+  {{> header}}
+  My body.
+  {{> footer}}
+```
+
+_header.hulk_
+
+```
+<h1>Hey There</h1>
+```
+
+_footer.hulk_
+
+```
+<footer>See ya</footer>
+```
+
+__Produces:__
+
+```
+  <h1>Hey There</h1>
+  My body.
+  <footer>See ya</footer>
+```
+# Example
 
 _views/index.hulk_
 
@@ -76,42 +107,9 @@ _app.js_
   
 ```
 
-
 `node app.js` _http://localhost:3000_ would produce:
 
 > Hello World!
-
-# Why Hulk Hogan?
-
-Becaues he's [awesome](http://en.wikipedia.org/wiki/Hulk_Hogan). But also because there wasn't a solution I could find that let's you easily use Mustaches' partials with Express.
-
-_body.hulk_
-
-```
-  {{> header}}
-  My body.
-  {{> footer}}
-```
-
-_header.hulk_
-
-```
-<h1>Hey There</h1>
-```
-
-_footer.hulk_
-
-```
-<footer>See ya</footer>
-```
-
-__Produces:__
-
-```
-  <h1>Hey There</h1>
-  My body.
-  <footer>See ya</footer>
-```
 
 # Thanks
 

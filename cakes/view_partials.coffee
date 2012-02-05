@@ -27,9 +27,9 @@ Feature 'View Partials',
 				
 
 			And 'I have a template file that includes that partial', ->
-				file = 'express_engine.hulk'
+				file = 'view_partials.hulk'
 				template = fs.readFileSync file
-				template.toString().should.eql 'Hello {{what}}! {{> salute}}'
+				template.toString().replace('\n','').should.eql 'Hello {{what}}! {{> salute}}'
 
 			When 'I render that template', ->
 				app.get '/', (req,res)->

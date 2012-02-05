@@ -18,7 +18,9 @@ Doens't have many bells and whistles. HTML Structure, and views are suppose to b
 
 # Why Hulk-Hogan?
 
-Becaues he's [awesome](http://en.wikipedia.org/wiki/Hulk_Hogan). But also because there wasn't a solution I could find that let's you easily use Mustaches' partials with Express.
+Becaues he's [awesome](http://en.wikipedia.org/wiki/Hulk_Hogan). But also because there wasn't a solution I could find that let's you easily use Mustaches' partials natively with Express.
+
+## Partials Example
 
 _body.hulk_
 

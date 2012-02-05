@@ -16,7 +16,7 @@ Doens't have many bells and whistles. HTML Structure, and views are suppose to b
 
 [Mustache](http://mustache.github.com/) is awesome. Has many implementations. It's clear `what's a {{variable}} and what is not`.
 
-# Why Hulk Hogan?
+# Why Hulk-Hogan?
 
 Becaues he's [awesome](http://en.wikipedia.org/wiki/Hulk_Hogan). But also because there wasn't a solution I could find that let's you easily use Mustaches' partials with Express.
 
@@ -47,7 +47,7 @@ __Produces:__
   My body.
   <footer>See ya</footer>
 ```
-# Example
+# Usage Example
 
 _views/index.hulk_
 

@@ -8,6 +8,77 @@ Hi {{name}}
 {{> salute}}
 ```
 
+# Usage
+
+_views/index.hulk_
+
+```mustache
+Hello {{what}}!
+```
+
+__CoffeScript__
+
+_app.coffee_
+
+```coffee
+  express = require 'express'
+  hulk = require 'hulk-hogan'
+
+  app = express.createServer()
+
+  app.set 'views', __dirname+'/views'  # Directory of your views
+  app.set 'view options', layout:false
+  app.set 'view engine', 'hulk'  # use the .hulk file extensions for your views
+  app.register '.hulk', hulk  # register to render .hulk with Hulk-Hogan
+
+  app.get '/', (req,res)->
+    res.render 'index', {what:'World'}
+
+  app.listen 3000
+```
+
+`coffee app.coffee` would produce: _http://localhost:3000_
+
+> Hello World!
+
+__JavaScript__
+
+_app.js_
+
+```javascript
+ var app, express, hulk;
+
+ express = require('express');
+
+ hulk = require('hulk-hogan');
+
+ app = express.createServer();
+
+ app.set('views', __dirname + '/views');
+
+ app.set('view options', {
+   layout: false
+ });
+
+ app.set('view engine', 'hulk');
+
+ app.register('.hulk', hulk);
+
+ app.get('/', function(req, res) {
+   res.render('index', {
+     what: 'World'
+   });
+ });
+
+ app.listen(3000); 
+  
+```
+
+
+`node app.js` would produce: _http://localhost:3000_
+
+> Hello World!
+
 # Others
 
 Hulk-Hogan inspired by [HBS](https://github.com/donpark/hbs)

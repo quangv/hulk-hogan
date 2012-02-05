@@ -105,7 +105,7 @@ __Produces:__
   <footer>See ya</footer>
 ```
 
-# Others
+# Thanks
 
 Hulk-Hogan inspired by [HBS](https://github.com/donpark/hbs)
 

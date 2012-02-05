@@ -37,7 +37,7 @@ _app.coffee_
   app.listen 3000
 ```
 
-`coffee app.coffee` would produce: _http://localhost:3000_
+`coffee app.coffee` _http://localhost:3000_ would produce: 
 
 > Hello World!
 
@@ -69,7 +69,7 @@ _app.js_
 ```
 
 
-`node app.js` would produce: _http://localhost:3000_
+`node app.js` _http://localhost:3000_ would produce:
 
 > Hello World!
 

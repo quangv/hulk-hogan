@@ -49,19 +49,15 @@ _app.js_
  var app, express, hulk;
 
  express = require('express');
-
  hulk = require('hulk-hogan');
 
  app = express.createServer();
 
  app.set('views', __dirname + '/views');
-
  app.set('view options', {
    layout: false
  });
-
  app.set('view engine', 'hulk');
-
  app.register('.hulk', hulk);
 
  app.get('/', function(req, res) {

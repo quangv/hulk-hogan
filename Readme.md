@@ -8,6 +8,14 @@ Hi {{name}}
 {{> salute}}
 ```
 
+# Why is Hogan.js Awesome?
+
+Logic-less templates, keeping control separate from views. Views separated from content.
+
+Doens't have many bells and whistles. HTML Structure, and views are suppose to be simple.
+
+[Mustache](http://mustache.github.com/) is awesome. Has many implementations. It's clear `what's a {{variable}} and what is not`.
+
 # Usage
 
 _views/index.hulk_

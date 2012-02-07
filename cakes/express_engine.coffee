@@ -11,17 +11,16 @@ Feature 'Express Engine',
 			Given 'an Express server', ->
 				express = require 'express'
 				app = express.createServer()
-				app.set 'views', process.cwd()
+				app.set 'views', process.cwd()+'/views'
 				app.listen 3000
 
 			And "it's registered to use Hulk-Hogan", ->
 				app.set 'view options', layout:false
 				app.register '.hulk', require '../'
 
-			file = null
 			fs = require 'fs'
 			And 'I have a template file', ->
-				file = 'express_engine.hulk'
+				file = 'views/express_engine.hulk'
 				template = fs.readFileSync file
 				template.toString().should.eql 'Hello {{what}}!'
 

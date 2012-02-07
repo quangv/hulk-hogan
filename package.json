@@ -1,6 +1,6 @@
 { 	"name" : "hulk-hogan"
   ,	"description" : "Express + Hogan.js"
-  ,	"version" : "0.0.2"
+  ,	"version" : "0.0.3"
   ,	"author" : "Quang Van <quangvvv@gmail.com>"
   ,	"homepage" : "https://github.com/quangv/hulk-hogan"
   ,	"dependencies" : {  "hogan.js" : "*"
@@ -9,9 +9,9 @@
   ,	"devDependencies" : { "mocha" : "*"
                          ,"mocha-cakes" : "*"
                          ,"should" : "*"
-						 ,"superagent" : "*"
-						 ,"express" : "*"
-                    }
+                         ,"superagent" : "*"
+                         ,"express" : "*"
+                        }
   , "keywords" : ["hogan.js", "express", "hogan", "partials", "template"]
   , "main" : "./index.js"
 }

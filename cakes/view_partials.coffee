@@ -11,7 +11,7 @@ Feature 'View Partials',
 			Given 'an Express server', ->
 				express = require 'express'
 				app = express.createServer()
-				app.set 'views', process.cwd()
+				app.set 'views', process.cwd()+'/views'
 				app.listen 3000
 
 			And "it's registered to use Hulk-Hogan", ->
@@ -22,14 +22,14 @@ Feature 'View Partials',
 			fs = require 'fs'
 
 			And 'I have a partial template file', ->
-				file = 'salute.hulk'
+				file = 'views/salute.hulk'
 				template = fs.readFileSync file
 				template.toString().replace('\n','').should.eql 'How are you, {{what}}?'
 				
 
 			file_template = 'view_partials.hulk'
 			And 'I have a template file that includes that partial', ->
-				template = fs.readFileSync file_template
+				template = fs.readFileSync 'views/'+file_template
 				template.toString().replace('\n','').should.eql 'Hello {{what}}! {{> salute}}'
 
 			When 'I render that template', ->

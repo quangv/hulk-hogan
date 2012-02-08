@@ -34,3 +34,10 @@ Describe 'hulk.coffee', ->
 
 			after ->
 				fs.unlinkSync file
+
+		describe 'Ignore missing Partials', ->
+			before ->
+			it 'should not throw if partials is missing', ->
+				(->
+					hulk.compile("Hi {{> test_ignore}}", {defaultEngine:'hulk'})().should.eql 'Hi '
+				).should.not.throw()

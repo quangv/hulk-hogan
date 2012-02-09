@@ -50,7 +50,11 @@ __Produces:__
   <footer>See ya</footer>
 ```
 
+---
+
 ### Sub-Partials supported
+
+You can link partials from within other partials.
 
 ```
   main.hulk

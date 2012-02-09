@@ -49,6 +49,20 @@ __Produces:__
   My body.
   <footer>See ya</footer>
 ```
+
+### Sub-Partials supported
+
+```
+  main.hulk
+
+  {{>body}}
+
+  body.hulk
+
+  {{>header}}
+  {{>footer}}
+```
+
 # Usage Example
 
 _views/index.hulk_

@@ -16,12 +16,25 @@ readFile = (file)->
 {existsSync} = require 'path'
 makePartials = (partials, list, root, defaultEngine)->
 	for file in list
-		filepath = join root, file
+		sublist = []
+		source = null
 
-		if existsSync filepath
-			partials[file] = readFile filepath
-		else if defaultEngine and existsSync filepath+=".#{defaultEngine}"
-			partials[file] = readFile filepath
+		if file not of partials
+			filepath = join root, file
+
+			if existsSync filepath
+				source = readFile filepath
+			else if defaultEngine and existsSync filepath+=".#{defaultEngine}"
+				source = readFile filepath
+
+			if source
+				partials[file] = source
+
+				sublist = parsePartials source
+
+				if sublist.length
+					makePartials partials, sublist, root, defaultEngine
+			
 	
 
 exports.compile = (source='', options)->

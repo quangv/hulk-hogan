@@ -41,3 +41,7 @@ Describe 'hulk.coffee', ->
 				(->
 					hulk.compile("Hi {{> test_ignore}}", {defaultEngine:'hulk'})().should.eql 'Hi '
 				).should.not.throw()
+
+		describe 'Recursive Sub-Partials', ->
+			it 'should include partials from partials', ->
+				hulk.compile('Yes, {{>view_partials}}', {what:'you', defaultEngine:'hulk', root:'views'})().replace(/\n/g,'').should.eql 'Yes, Hello you! How are you, you?'

@@ -142,5 +142,6 @@ and [Micah Smith's hogan-express.js blog post](http://allampersandall.blogspot.c
 ---
 
 *Special Thanks* to the [Hogan.js](https://github.com/twitter/hogan.js) Twitter Team, as well as Hulk-Hogan's grand-dad, (or is it more like Great Uncle?) [Mustache](http://mustache.github.com/). 
+
 Also Thanks to TJ for the excellent [Express](https://github.com/visionmedia/express) and [Express-Resource](https://github.com/visionmedia/express-resource)
 

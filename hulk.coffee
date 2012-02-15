@@ -1,6 +1,6 @@
 {join} = require 'path'
 
-parsePartials = (source)->  # Return list of patial filenames in the source.
+exports.parsePartials = (source)->  # Return list of patial filenames in the source.
 	{scan} = require 'hogan.js'
 	result = []
 	scanned = scan source
@@ -30,7 +30,7 @@ makePartials = (partials, list, root, defaultEngine)->
 			if source
 				partials[file] = source
 
-				sublist = parsePartials source
+				sublist = exports.parsePartials source
 
 				if sublist.length
 					makePartials partials, sublist, root, defaultEngine
@@ -43,7 +43,7 @@ exports.compile = (source='', options)->
 
 	partials = {}
 	# Get Partials #
-	partial_files = parsePartials source
+	partial_files = exports.parsePartials source
 
 	if partial_files.length
 		makePartials partials, partial_files, options.root, options.defaultEngine

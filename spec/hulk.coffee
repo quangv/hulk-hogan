@@ -1,6 +1,10 @@
 Describe 'hulk.coffee', ->
 	hulk = require '../hulk'
 
+	describe '#parsePartials(source)', ->
+		it 'should return a list of partials', ->
+			hulk.parsePartials('{{> test}} hi {{>test2}}').should.eql ['test', 'test2']
+
 	describe '#compile()', ->
 		it 'should be a function', ->
 			hulk.compile.should.be.a 'function'

@@ -41,8 +41,6 @@ exports.compile = (source='', options)->
 	hogan = require 'hogan.js'
 	compiled = hogan.compile source
 
-	require 'log'
-
 	partials = {}
 	# Get Partials #
 	partial_files = parsePartials source

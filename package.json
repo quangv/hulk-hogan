@@ -3,6 +3,7 @@
   ,	"version" : "0.0.6"
   ,	"author" : "Quang Van <quangvvv@gmail.com>"
   ,	"homepage" : "https://github.com/quangv/hulk-hogan"
+  ,	"repository" : { "type": "git", "url": "git://github.com/quangv/hulk-hogan.git"}
   ,	"dependencies" : {  "hogan.js" : "*"
                        ,"coffee-script" : "*"
                     }
@@ -12,7 +13,7 @@
                          ,"superagent" : "*"
                          ,"express" : "*"
                         }
-  , "keywords" : ["hogan.js", "express", "hogan", "partials", "template"]
+  , "keywords" : ["hogan.js", "express", "hogan", "partials", "template", "mustache"]
   , "main" : "./index.js"
 }
 

@@ -37,7 +37,7 @@ makePartials = (partials, list, root, defaultEngine)->
 			
 	
 
-exports.compile = (source='', options)->
+compile = exports.compile = (source='', options)->
 	hogan = require 'hogan.js'
 	compiled = hogan.compile source
 
@@ -50,3 +50,17 @@ exports.compile = (source='', options)->
 
 	return ->
 		return compiled.render options, partials
+
+# add support for Express 3.x templating scheme
+# in Express use like this:
+#
+#		app.engine 'html', hogan.__express
+#		app.set 'view engine', 'html'
+#
+exports.__express = (filename, options, callback) ->
+  source = readFile(filename)
+ 	# pass options to compile method to support partials
+  compiled = compile(source, options)
+  callback(null, compiled(options))
+
+

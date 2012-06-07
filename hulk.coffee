@@ -1,3 +1,6 @@
+{join} = require 'path'
+{existsSync} = require 'path'
+
 class HulkHogan
 	parsePartials : (source)->  # Return list of patial filenames in the source.
 		{scan} = require 'hogan.js'
@@ -9,26 +12,30 @@ class HulkHogan
 		return result
 
 	
-	_readFile : (file)->
+	_readFile : (path)->
 		{readFileSync} = require 'fs'
-		return readFileSync(file).toString() # TODO better way to read file? especially large ones.
+		return readFileSync(path).toString() # TODO better way to read file? especially large ones.
 
+	getSourcePath : (file)-> # Get full filepath.
+		join @root, file
+
+	getSource : (file)->  # Return source file.
+		filepath = @getSourcePath file
+
+		if existsSync filepath
+			return @_readFile filepath
+		else if @ext and existsSync filepath+=".#{@ext}"
+			return @_readFile filepath
+
+		return ''
 	
-	_makePartials : (partials, list, root, defaultEngine)->
-		{join} = require 'path'
-		{existsSync} = require 'path'
-
+	_makePartials : (partials, list)->
 		for file in list
 			sublist = []
 			source = null
 
 			if file not of partials
-				filepath = join root, file
-
-				if existsSync filepath
-					source = @_readFile filepath
-				else if defaultEngine and existsSync filepath+=".#{defaultEngine}"
-					source = @_readFile filepath
+				source = @getSource file
 
 				if source
 					partials[file] = source
@@ -36,11 +43,15 @@ class HulkHogan
 					sublist = @parsePartials source
 
 					if sublist.length
-						@_makePartials partials, sublist, root, defaultEngine
-				
+						@_makePartials partials, sublist
 		
-	
-	compile : (source='', options)->
+	render : (source, context={})->  # Shortcut for @compile(source, options)()
+		do @compile source, context
+
+	compile : (source='', options={})->
+		@root = options.root if options.root
+		@ext = options.defaultEngine if options.defaultEngine
+
 		hogan = require 'hogan.js'
 		compiled = hogan.compile source
 
@@ -49,12 +60,11 @@ class HulkHogan
 		partial_files = @parsePartials source
 
 		if partial_files.length
-			@_makePartials partials, partial_files, options.root, options.defaultEngine
+			@_makePartials partials, partial_files
 
 		return ->
 			return compiled.render options, partials
 
-	
 	__express : (filename, options, callback) ->
 		# add support for Express 3.x templating scheme
 		# in Express use like this:

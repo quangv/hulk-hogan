@@ -131,6 +131,12 @@ _app.js_
 
 > Hello World!
 
+# Automated Tests
+
+Hulk-Hogan uses [mocha](http://visionmedia.github.com/mocha/) & [mocha-cakes](https://github.com/quangv/mocha-cakes) for testing.
+
+`make buffet` should run all tests.
+
 # Thanks
 
 Hulk-Hogan inspired by [HBS](https://github.com/donpark/hbs)

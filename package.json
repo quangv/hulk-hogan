@@ -1,6 +1,6 @@
 { 	"name" : "hulk-hogan"
   ,	"description" : "Express + Hogan.js"
-  ,	"version" : "0.0.7"
+  ,	"version" : "0.0.8"
   ,	"author" : "Quang Van <quangvvv@gmail.com>"
   ,	"homepage" : "https://github.com/quangv/hulk-hogan"
   ,	"repository" : { "type": "git", "url": "git://github.com/quangv/hulk-hogan.git"}

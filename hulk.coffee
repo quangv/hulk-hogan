@@ -65,7 +65,7 @@ class HulkHogan
 		return ->
 			return compiled.render options, partials
 
-	__express : (filename, options, callback) ->
+	__express : (filename, options, callback) =>
 		# add support for Express 3.x templating scheme
 		# in Express use like this:
 		#

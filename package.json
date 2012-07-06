@@ -3,7 +3,7 @@
   ,	"version" : "0.0.9"
   ,	"author" : "Quang Van <quangvvv@gmail.com>"
   , "contributors": [
-      {"name": "Christopher Scott Hernandez", "email": ""}
+      {"name": "Christopher Scott Hernandez", "email": "c.scott.hernandez@gmail.com"}
     ]
   ,	"homepage" : "https://github.com/quangv/hulk-hogan"
   ,	"repository" : { "type": "git", "url": "git://github.com/quangv/hulk-hogan.git"}

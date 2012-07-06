@@ -1,7 +1,10 @@
 { 	"name" : "hulk-hogan"
   ,	"description" : "Express + Hogan.js"
-  ,	"version" : "0.0.8"
+  ,	"version" : "0.0.9"
   ,	"author" : "Quang Van <quangvvv@gmail.com>"
+  , "contributors": [
+      {"name": "Christopher Scott Hernandez", "email": ""}
+    ]
   ,	"homepage" : "https://github.com/quangv/hulk-hogan"
   ,	"repository" : { "type": "git", "url": "git://github.com/quangv/hulk-hogan.git"}
   ,	"dependencies" : {  "hogan.js" : "*"

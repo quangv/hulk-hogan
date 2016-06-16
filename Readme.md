@@ -1,3 +1,5 @@
+__Project is no longer being maintained.__
+
 # Purpose
 
 Connect [Hogan.js](http://twitter.github.com/hogan.js/) with [Express](http://expressjs.com/), with support for Partials.
